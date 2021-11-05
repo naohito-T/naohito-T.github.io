@@ -63,8 +63,15 @@ a:visited {
   color: #aaa;
 }
 
+.fab {
+  color: #fff;
+}
+
 @media (max-width: 980px) {
-  body .container .container-wrapper .icons {
+  body .container-wrapper__title {
+    font-size: 3em;
+  }
+  body .container-wrapper .icons {
     justify-content: space-around;
   }
 }
