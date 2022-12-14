@@ -3,9 +3,11 @@ import { useRouter } from 'next/router';
 // components
 import { TopTpl, Layout } from '@/components/templates';
 import { Meta } from '@/components/molecules';
-
+import { GuestAPI } from '~/apis/containers';
 
 export const getStaticProps = async () => {
+  GuestAPI.fetchSns();
+
   return {
     props: {},
   };
@@ -17,6 +19,7 @@ const Top: NextPage<Props> = ({}) => {
   const { pathname, asPath } = useRouter();
   console.log(pathname);
   console.log(asPath);
+  // console.log(basePath); undefined
   return (
     <>
       <Meta pageFullPath={pathname} pageAsPath={asPath} />
