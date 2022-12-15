@@ -1,6 +1,6 @@
 import { NextComponentType, NextPageContext } from 'next';
 
-import { Header } from '@/components/molecules';
+// import { Header } from '@/components/molecules';
 import styled from 'styled-components';
 
 type LayoutProps = {
@@ -29,7 +29,7 @@ export const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({
       onContextMenu={(e) => disableRightClick && e.preventDefault()}
       data-testid='layout'
     >
-      <Header className='header' />
+      {/* <Header className='header' /> */}
       <MainWrap>{children}</MainWrap>
       {/* <Footer className='footer' data-testid='footer' /> */}
     </Wrapper>

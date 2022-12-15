@@ -17,9 +17,7 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Top: NextPage<Props> = ({}) => {
   const { pathname, asPath } = useRouter();
-  console.log(pathname);
-  console.log(asPath);
-  // console.log(basePath); undefined
+  
   return (
     <>
       <Meta pageFullPath={pathname} pageAsPath={asPath} />
