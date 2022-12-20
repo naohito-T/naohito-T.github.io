@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/naohito-T/naohito-T.github.io#readme",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.0",
     "gh-pages": "^3.2.3"
   },
   "devDependencies": {
