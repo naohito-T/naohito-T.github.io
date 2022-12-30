@@ -39,7 +39,7 @@ jobs:
             ${{ runner.os }}-yarn-
             ${{ runner.os }}-
 
-      - name: Echo isCache
+      - name: Echo is cache
         run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
 
       - name: Node_modules install
@@ -47,4 +47,6 @@ jobs:
 
       - name: build check
         run: yarn build
-
+        env:
+          MICRO_CMS_DOMAIN: ${{ secrets.MICRO_CMS_DOMAIN }}
+          MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
