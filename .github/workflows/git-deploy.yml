@@ -10,7 +10,7 @@ defaults:
     working-directory: frontend
 
 jobs:
-  eslint:
+  git-deploy:
     timeout-minutes: 5
 
     strategy:
@@ -50,5 +50,14 @@ jobs:
           MICRO_CMS_DOMAIN: ${{ secrets.MICRO_CMS_DOMAIN }}
           MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
 
+      # しかしGitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
+      # つまりHTMLからJSを読み込めない
+      # これを回避するために.nojekyllファイルをoutディレクトリに作る
+      - name: add nojekyll
+        run: touch ./out/.nojekyll
+
       - name: deploy
-        run: yarn deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
