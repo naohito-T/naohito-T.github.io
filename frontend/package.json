@@ -13,6 +13,7 @@
     "format": "prettier -w './**/*.{js,jsx,ts,tsx,json}'",
     "lint": "next lint --dir src",
     "lint:fix": "yarn lint --fix",
+    "jest:c": "jest --coverage --silent --testLocationInResults --ci --json --outputFile=\"report.json\"",
     "deploy": "gh-pages -d .next"
   },
   "dependencies": {
