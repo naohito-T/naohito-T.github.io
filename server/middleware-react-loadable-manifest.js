@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST={"../components/molecules/header.tsx -> ./circle-bounce":{id:3703,files:[]},"../components/organisms/cube.tsx -> react-p5":{id:4210,files:["static/chunks/fcfa8dee.8c4dc9d4ca05dc2f.js"]},"../components/templates/layout/layout.tpl.tsx -> @/components/organisms":{id:9505,files:[]}};
