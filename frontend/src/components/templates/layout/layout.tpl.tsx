@@ -1,15 +1,6 @@
 import { NextComponentType, NextPageContext } from 'next';
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/molecules';
-import { InertialProps } from '@/components/organisms';
 import styled from 'styled-components';
-
-const Inertial = dynamic<InertialProps>(
-  () => import('@/components/organisms').then((module) => module.Inertial),
-  {
-    ssr: false,
-  },
-);
 
 type LayoutProps = {
   // 右クリックを禁止するか default false
@@ -30,10 +21,6 @@ const Wrapper = styled.div`
     padding-top: 80px;
     width: 100%;
   }
-
-  /* > .footer {
-    height: 100vh;
-  } */
 `;
 
 export const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({
@@ -47,9 +34,7 @@ export const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({
       data-testid='layout'
     >
       <Header className='header' />
-      <Inertial className='main'>{children}</Inertial>
-      {/* <Inertial className='main' /> */}
-      {/* <Footer className='footer' data-testid='footer' /> */}
+      {children}
     </Wrapper>
   );
 };

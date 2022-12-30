@@ -58,3 +58,14 @@ body {
 img {
   -webkit-user-drag: none;
 }
+
+/*
+ * @see https://github.com/locomotivemtl/locomotive-scroll/issues/406
+ */
+.has-scroll-smooth {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

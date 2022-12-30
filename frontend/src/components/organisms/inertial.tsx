@@ -1,14 +1,20 @@
-import { NextComponentType, NextPageContext } from 'next';
 import { useEffect } from 'react';
+import { NextComponentType, NextPageContext } from 'next';
+import dynamic from 'next/dynamic';
 import styled from 'styled-components';
 import { main } from '@/libs/animation/inertial';
+import { ParallaxSectionProps } from '@/components/organisms';
+const ParallaxSection = dynamic<ParallaxSectionProps>(
+  () => import('@/components/organisms').then((module) => module.ParallaxSection),
+  { ssr: false },
+);
 
 export type InertialProps = {
   className?: string;
-  readonly children: Required<React.ReactNode>;
+  // readonly children: Required<React.ReactNode>;
 };
 
-const Wrapper = styled.main`
+const Wrapper = styled.div`
   width: 100%;
   margin: 0 auto;
 
@@ -35,55 +41,13 @@ export const Inertial: NextComponentType<NextPageContext, null, InertialProps> =
     main();
   }, []);
   return (
-    // childrenだけだとscrollができない
     <Wrapper className={`${className} js-inertial-scroll`}>
       <div className='content js-inertial-scroll_content'>
-        {children}
-        {/* 一つでもdivがあれば慣性スクロールが動く */}
-        <div>
-          <p>hel</p>
-        </div>
-        {/* <div className='main'>
-          <h2 className='title'>naohito-T.github.io</h2>
+        <div className='top'>
           <p className='sub-title'>Code as you design.</p>
           <p className='sub-title'>Software Engineer</p>
         </div>
-        <div className='main'>
-          <h2 className='title'>naohito-T.github.io</h2>
-          <p className='sub-title'>Code as you design.</p>
-          <p className='sub-title'>Software Engineer</p>
-        </div>
-        <div className='main'>
-          <h2 className='title'>naohito-T.github.io</h2>
-          <p className='sub-title'>Code as you design.</p>
-          <p className='sub-title'>Software Engineer</p>
-        </div>
-        <div className='main'>
-          <h2 className='title'>naohito-T.github.io</h2>
-          <p className='sub-title'>Code as you design.</p>
-          <p className='sub-title'>Software Engineer</p>
-        </div>
-        <div className='main'>
-          <h2 className='title'>naohito-T.github.io</h2>
-          <p className='sub-title'>Code as you design.</p>
-          <p className='sub-title'>Software Engineer</p>
-        </div>
-        <div className='main'>
-          <h2 className='title'>naohito-T.github.io</h2>
-          <p className='sub-title'>Code as you design.</p>
-          <p className='sub-title'>Software Engineer</p>
-        </div>
-        <div className='main'>
-          <h2 className='title'>naohito-T.github.io</h2>
-          <p className='sub-title'>Code as you design.</p>
-          <p className='sub-title'>Software Engineer</p>
-        </div>
-        <div className='main'>
-          <h2 className='title'>naohito-T.github.io</h2>
-          <p className='sub-title'>Code as you design.</p>
-          <p className='sub-title'>Software Engineer</p>
-        </div> */}
-
+        <ParallaxSection />
         <ul>
           <li>
             <img

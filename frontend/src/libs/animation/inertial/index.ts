@@ -4,6 +4,9 @@ const init = () => {
   new Page();
 };
 
+/**
+ * @desc entry point
+ */
 export const main = () => {
   if (document.readyState !== 'loading') {
     init();

@@ -1,9 +1,9 @@
 import type { NextPage, InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
-// components
-import { TopTpl, Layout } from '@/components/templates';
+import { Layout, TopTpl } from '@/components/templates';
 import { Meta } from '@/components/molecules';
 import { GuestAPI } from '~/apis/containers';
+import { RLSProvider } from '@/context';
 
 export const getStaticProps = async () => {
   GuestAPI.fetchSns();
@@ -22,7 +22,11 @@ const Top: NextPage<Props> = ({}) => {
     <>
       <Meta pageFullPath={pathname} pageAsPath={asPath} />
       <Layout disableRightClick={true}>
-        <TopTpl />
+        <RLSProvider>
+          <div data-scroll-container>
+            <TopTpl />
+          </div>
+        </RLSProvider>
       </Layout>
     </>
   );

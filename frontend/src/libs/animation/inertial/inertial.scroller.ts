@@ -5,14 +5,23 @@ import { imagesLoaded } from '@/libs/animation/inertial/util/image-loaded';
  * ref: https://codepen.io/ReGGae/pen/pxMJLW
  */
 class InertialScroller {
-  public ease!: number;
+  /**
+   * @desc 速度を調整するプロパティ
+   */
+  public ease: number;
 
-  public scrollY!: number;
+  public scrollY: number;
 
-  public easeScrollY!: number;
+  public easeScrollY: number;
 
+  /**
+   * @desc スクロールの全ての要素
+   */
   public containerElement!: HTMLElement;
 
+  /**
+   * @desc
+   */
   public contentElement!: HTMLElement;
 
   public frame!: number | null;
@@ -52,7 +61,9 @@ class InertialScroller {
     document.body.style.height = `${rect.height}px`;
   }
 
-  /** 画像を一枚読み込み終わるたびにbodyの高さを更新 */
+  /**
+   * @desc 画像を一枚読み込み終わるたびにbodyの高さを更新
+   */
   async preload() {
     await imagesLoaded(this.contentElement, () => {
       this.setBodyHeight();
@@ -88,7 +99,6 @@ class InertialScroller {
     this.setContainerStyles();
     this.setBodyHeight();
     this.addEventListeners();
-
     this.requestAnimationFrame();
   }
 
@@ -102,7 +112,10 @@ class InertialScroller {
     this.containerElement.style = '';
   }
 
-  /** 次のフレームを要求 */
+  /**
+   * @desc 次のフレームを要求
+   * requestAnimationFrame() はブラウザの描画のタイミングに合わせて指定したコールバック関数を実行してくれる
+   */
   requestAnimationFrame() {
     this.frame = window.requestAnimationFrame(this.boundUpdate);
   }
