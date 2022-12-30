@@ -25,3 +25,18 @@ export const repeatYoyoStagger = (gsap: GSAP, className: string = '.circle') => 
   });
   return tween;
 };
+
+/**
+ * @desc 上からポヨンと落ちてくるanimation header見れば分かる
+ */
+export const bounceRepeat = (gsap: GSAP, id: string) => {
+  const tween = gsap.to(`#${id}`, {
+    autoAlpha: 1,
+    duration: 2,
+    y: 0,
+    ease: 'bounce',
+    repeat: -1,
+    repeatDelay: 3,
+  });
+  return tween;
+};

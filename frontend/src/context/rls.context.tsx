@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import type { NextComponentType, NextPageContext } from 'next';
-import { useRouter } from 'next/router';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 
 type Props = {
@@ -8,7 +7,6 @@ type Props = {
 };
 
 export const RLSProvider: NextComponentType<NextPageContext, null, Props> = ({ children }) => {
-  const { asPath } = useRouter();
   const containerRef = useRef(null);
 
   return (
@@ -17,8 +15,6 @@ export const RLSProvider: NextComponentType<NextPageContext, null, Props> = ({ c
         smooth: true,
       }}
       watch={[]}
-      location={asPath}
-      onLocationChange={(scroll: any) => scroll.scrollTo(0, { duration: 0, disableLerp: true })}
       containerRef={containerRef}
     >
       {children}

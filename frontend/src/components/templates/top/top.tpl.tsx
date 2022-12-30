@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Sns } from '@/schemas';
 import { displayFlex } from '@/styles/modules';
 import { TopSection } from '@/components/organisms';
+import { Footer } from '@/components/molecules';
 
 type Props = {
   snsList?: Sns[];
@@ -17,6 +18,7 @@ const Wrapper = styled.div`
   }
 
   .content {
+    width: 100%;
     padding: 10vw 5% 5vw;
   }
 
@@ -58,52 +60,55 @@ const Wrapper = styled.div`
 
 export const TopTpl: NextComponentType<NextPageContext, null, Props> = ({ className }) => {
   return (
-    <Wrapper className={className} data-testid='top-tpl'>
-      <TopSection />
-      <div className='content'>
-        <div className='item'>
-          <div className='image' data-scroll-speed='-2'>
-            <img
-              src='https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
-              alt=''
-            />
+    <>
+      <Wrapper className={className} data-testid='top-tpl'>
+        <TopSection />
+        <div className='content'>
+          <div className='item'>
+            <div className='image' data-scroll-speed='-2'>
+              <img
+                src='https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+                alt=''
+              />
+            </div>
+            <div className='text' data-y='-8rem' data-scroll-speed='-1'>
+              <p>Fashion</p>
+            </div>
           </div>
-          <div className='text' data-y='-8rem' data-scroll-speed='-1'>
-            <p>Fashion</p>
-          </div>
-        </div>
 
-        <div className='item'>
-          <div className='image'>
-            <img
-              src='https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
-              alt=''
-            />
+          <div className='item'>
+            <div className='image'>
+              <img
+                src='https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+                alt=''
+              />
+            </div>
+            <div className='text' data-y='-50'>
+              <p>Nature</p>
+            </div>
           </div>
-          <div className='text' data-y='-50'>
-            <p>Nature</p>
-          </div>
-        </div>
 
-        <div className='item'>
-          <div className='image' data-y='-100'>
-            <img
-              src='https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
-              alt=''
-            />
-          </div>
-          <div className='text' js-parallax>
-            <p>Fashion</p>
+          <div className='item'>
+            <div className='image' data-y='-100'>
+              <img
+                src='https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+                alt=''
+              />
+            </div>
+            <div className='text'>
+              <p>Fashion</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className='separate'>
-        <img
-          className=''
-          data-y='-20vw'
-          src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
-        />
-      </div>
-    </Wrapper>
+        <div className='separate'>
+          <img
+            className=''
+            data-y='-20vw'
+            src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80'
+          />
+        </div>
+        <Footer className='footer' />
+      </Wrapper>
+    </>
   );
 };

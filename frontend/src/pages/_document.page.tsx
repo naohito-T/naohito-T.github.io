@@ -13,11 +13,7 @@ export default class MyDocument extends Document {
       <Html lang={locale ?? 'ja'} dir='ltr'>
         <Head>
           <link
-            href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;900&display=swap'
-            rel='stylesheet'
-          />
-          <link
-            href='https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital@1&display=swap'
             rel='stylesheet'
           />
         </Head>

@@ -3,11 +3,11 @@ import dynamic from 'next/dynamic';
 import styled from 'styled-components';
 import { displayFlex } from '@/styles/modules';
 import { AppMetaConfig } from '@/configs';
+import { CircleBounceType } from './circle-bounce';
 
-import { VerticalTimelineSliderProps, Circle } from '@/components/atoms';
-const VerticalTimelineSlider = dynamic<VerticalTimelineSliderProps>(
-  () => import('@/components/atoms').then((module) => module.VerticalTimelineSlider),
-  { ssr: false },
+const CircleBounce = dynamic<CircleBounceType>(
+  () => import('./circle-bounce').then((module) => module.CircleBounce),
+  { loading: () => <></>, ssr: false },
 );
 
 type Props = {
@@ -15,9 +15,11 @@ type Props = {
 };
 
 const Wrapper = styled.header`
+  ${displayFlex({ alignItems: 'center', flexDirection: 'row', justifyContent: 'flex-start' })}
   background: transparent;
   z-index: 10;
   user-select: none;
+  height: 80px;
 
   .timeline-wrapper {
     position: relative;
@@ -32,9 +34,8 @@ const Wrapper = styled.header`
   }
 
   .title {
-    ${displayFlex({ alignItems: 'flex-start' })}
     height: 100%;
-    margin-left: min(5rem);
+    line-height: 80px;
   }
 `;
 
@@ -42,11 +43,7 @@ export const Header: NextComponentType<NextPageContext, null, Props> = ({ classN
   return (
     <Wrapper className={className} data-testid='header'>
       <div className='timeline-wrapper'>
-        <VerticalTimelineSlider className='timeline'>
-          <Circle className='circle'>3</Circle>
-          <Circle className='circle'>2</Circle>
-          <Circle className='circle'>1</Circle>
-        </VerticalTimelineSlider>
+        <CircleBounce id='circle-bounce' />
       </div>
       <h1 className='title'>{AppMetaConfig.PAGE_TITLE}</h1>
     </Wrapper>

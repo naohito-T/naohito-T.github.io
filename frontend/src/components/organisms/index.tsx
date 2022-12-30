@@ -1,3 +1,2 @@
-export * from './parallax.section';
-export * from './inertial';
+export * from './cube';
 export * from './top.section';

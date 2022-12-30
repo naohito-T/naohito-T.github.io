@@ -11,20 +11,36 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
 
-  .top-title {
+  .top-wrap {
     ${displayFlex({})};
     height: 100%;
-    text-transform: uppercase;
 
-    .title {
-      font-size: 2rem;
-      font-weight: bold;
+    .top-title {
+      ${displayFlex({
+        alignItems: 'flex-start',
+      })};
+      height: 100%;
+      text-transform: uppercase;
+
+      .title {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      .desc {
+        line-height: 1;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
     }
 
-    .desc {
+    .border {
+      border-bottom: 1px solid #fff;
       display: block;
-      font-size: 1rem;
-      font-weight: bold;
+      height: 1px;
+      width: 70%;
+      margin: 15px 0;
     }
   }
 
@@ -36,7 +52,7 @@ const Wrapper = styled.section`
 
     span {
       position: absolute;
-      left: -25px;
+      left: -20px;
       top: -50px;
       color: #eee;
       font-size: 0.7rem;
@@ -48,14 +64,13 @@ const Wrapper = styled.section`
       position: absolute;
       top: 0;
       width: 1px;
-      height: 30px;
+      height: 50px;
       background: #eee;
       animation: path-move 1.4s ease-in-out infinite;
       opacity: 0;
     }
   }
 
-  /*高さ・位置・透過が変化して線が上から下に動く*/
   @keyframes path-move {
     0% {
       height: 0;
@@ -63,7 +78,7 @@ const Wrapper = styled.section`
       opacity: 0;
     }
     30% {
-      height: 30px;
+      height: 50px;
       opacity: 1;
     }
     100% {
@@ -77,13 +92,13 @@ const Wrapper = styled.section`
 export const TopSection: NextComponentType<NextPageContext, null, Props> = ({ className }) => {
   return (
     <Wrapper className={className} data-testid='top-section'>
-      <div className='top-title'>
-        <h2 className='title'>naohito-T.github.io</h2>
-        <span className='desc'>
-          Code as you design.
-          <br />
-          Software Engineer
-        </span>
+      <div className='top-wrap'>
+        <div className='top-title'>
+          <h2 className='title'>naohito-T.github.io</h2>
+          <p className='desc'>Code as you design.</p>
+          <p className='desc'>Software Engineer</p>
+          <span className='border'></span>
+        </div>
       </div>
       <div className='scroll-down'>
         <span>Scroll</span>

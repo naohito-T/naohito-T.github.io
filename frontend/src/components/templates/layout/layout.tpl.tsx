@@ -1,5 +1,7 @@
 import { NextComponentType, NextPageContext } from 'next';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/molecules';
+import { CubeProps } from '@/components/organisms';
 import styled from 'styled-components';
 
 type LayoutProps = {
@@ -8,6 +10,11 @@ type LayoutProps = {
   readonly children: Required<React.ReactNode>;
 };
 
+const Cube = dynamic<CubeProps>(
+  () => import('@/components/organisms').then((module) => module.Cube),
+  { ssr: false },
+);
+
 const Wrapper = styled.div`
   width: 100%;
 
@@ -15,6 +22,11 @@ const Wrapper = styled.div`
     position: fixed;
     width: 100%;
     height: 80px;
+  }
+
+  .cube {
+    position: absolute;
+    z-index: -10;
   }
 
   .main {
@@ -34,6 +46,7 @@ export const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({
       data-testid='layout'
     >
       <Header className='header' />
+      <Cube className='cube' />
       {children}
     </Wrapper>
   );

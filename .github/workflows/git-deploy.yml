@@ -1,9 +1,9 @@
-name: Frontend deploy CI
+name: Git deploy CI
 
 on:
-  pull_request:
-    paths:
-      - "frontend"
+  push:
+    branches:
+      - main
 
 defaults:
   run:
@@ -12,8 +12,7 @@ defaults:
 jobs:
   eslint:
     timeout-minutes: 5
-    # https://ema-hiro.hatenablog.com/entry/2020/12/15/123210
-    # 変数置換できるようになるため一つのファイルで複数version対応可能になる
+
     strategy:
       matrix:
         node-version: [16.17.0]
@@ -45,6 +44,8 @@ jobs:
       - name: Node_modules install
         run: yarn
 
-      - name: build check
-        run: yarn deploy
+      - name: Build
+        run: yarn build
 
+      - name: deploy
+        run: yarn deploy
