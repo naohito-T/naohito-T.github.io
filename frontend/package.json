@@ -8,13 +8,13 @@
   },
   "scripts": {
     "dev": "next dev -p 2000",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start -p 2000",
     "format": "prettier -w './**/*.{js,jsx,ts,tsx,json}'",
     "lint": "next lint --dir src",
     "lint:fix": "yarn lint --fix",
     "jest:c": "jest --coverage --silent --testLocationInResults --ci --json --outputFile=\"report.json\"",
-    "deploy": "gh-pages -d .next"
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
