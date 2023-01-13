@@ -50,6 +50,14 @@ export const Meta: NextComponentType<NextPageContext, null, Props> = ({
       {/* サイトやブログの管理者をFacebookに伝えるためのタグだそうですが、この記述がなくても上記のみでページの情報は表示されます。 */}
       {/* この記述をすることによって、Facebookからサイトへのトラフィック分析ができるFacebookインサイトを利用できるようになるようです。 */}
       <meta property='fb:app_id' content='' />
+      {/* iPhone Safariは文書内の電話番号を検出して自動的にリンクにしてしまうため無効（a要素のtel:を使用した方が確実 */}
+      <meta name='format-detection' content='telephone=no' />
+      {/* faviconの設定 */}
+      <link rel='shortcut icon' type='image/svg+xml' href='/favicon.svg' />
+      <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+      {/* @see https://www.symmetric.co.jp/blog/archives/93 */}
+      <meta name='apple-mobile-web-app-capable' content='yes' />
+      <meta name='apple-mobile-web-app-status-bar-style' content='black'></meta>
       {/* noIndex === true の場合のみ noindex 有効化 */}
       {noIndex && <meta name='robots' content='noindex' />}
     </Head>

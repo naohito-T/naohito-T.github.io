@@ -1,6 +1,6 @@
 import { NextComponentType, NextPageContext } from 'next';
 import styled from 'styled-components';
-import { displayFlex } from '@/styles/modules';
+import { displayFlex, MediaSP } from '@/styles/modules';
 
 type Props = {
   className?: string;
@@ -9,7 +9,7 @@ type Props = {
 const Wrapper = styled.section`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
 
   .top-wrap {
     ${displayFlex({})};
@@ -25,6 +25,10 @@ const Wrapper = styled.section`
       .title {
         font-size: 3rem;
         font-weight: bold;
+
+        ${MediaSP`
+          font-size: 1.8rem;
+        `}
       }
 
       .desc {
@@ -32,6 +36,10 @@ const Wrapper = styled.section`
         display: block;
         font-size: 1.5rem;
         font-weight: bold;
+
+        ${MediaSP`
+          font-size: 1rem;
+        `}
       }
     }
 
@@ -52,11 +60,16 @@ const Wrapper = styled.section`
 
     span {
       position: absolute;
-      left: -20px;
+      left: -30px;
       top: -50px;
       color: #eee;
-      font-size: 0.7rem;
+      font-size: 1rem;
       letter-spacing: 0.05em;
+
+      ${MediaSP`
+          left: -20px;
+          font-size: 0.9rem;
+      `}
     }
 
     &::after {
@@ -64,7 +77,7 @@ const Wrapper = styled.section`
       position: absolute;
       top: 0;
       width: 1px;
-      height: 50px;
+      height: 80px;
       background: #eee;
       animation: path-move 1.4s ease-in-out infinite;
       opacity: 0;
@@ -74,16 +87,16 @@ const Wrapper = styled.section`
   @keyframes path-move {
     0% {
       height: 0;
-      top: 0;
+      top: -15px;
       opacity: 0;
     }
     30% {
-      height: 50px;
+      height: 80px;
       opacity: 1;
     }
     100% {
       height: 0;
-      top: 50px;
+      top: 80px;
       opacity: 0;
     }
   }
@@ -93,10 +106,16 @@ export const TopSection: NextComponentType<NextPageContext, null, Props> = ({ cl
   return (
     <Wrapper className={className} data-testid='top-section'>
       <div className='top-wrap'>
-        <div className='top-title'>
-          <h2 className='title'>naohito-T.github.io</h2>
-          <p className='desc'>Code as you design.</p>
-          <p className='desc'>Software Engineer</p>
+        <div className='top-title' data-scroll-section>
+          <h2 className='title' data-scroll data-scroll-speed='2'>
+            naohito-T.github.io
+          </h2>
+          <p className='desc' data-scroll data-scroll-speed='1'>
+            Code as you design.
+          </p>
+          <p className='desc' data-scroll data-scroll-speed='1'>
+            Software Engineer
+          </p>
           <span className='border'></span>
         </div>
       </div>

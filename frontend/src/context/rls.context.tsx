@@ -13,6 +13,9 @@ export const RLSProvider: NextComponentType<NextPageContext, null, Props> = ({ c
     <LocomotiveScrollProvider
       options={{
         smooth: true,
+        smartphone: {
+          smooth: true,
+        },
       }}
       watch={[]}
       containerRef={containerRef}
