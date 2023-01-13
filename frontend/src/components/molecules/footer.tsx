@@ -41,8 +41,12 @@ export const Footer: NextComponentType<NextPageContext, null, Props> = ({ classN
     <Wrapper className={className} data-testid='footer'>
       <div className='footer-inner'>
         <div className='footer-mail'>
-          <h2 className='mail-text'>WORK CONTACT</h2>
-          <h2 className='mail-text'>NAOHITO-T</h2>
+          <h2 className='mail-text' data-scroll data-scroll-speed='2'>
+            WORK CONTACT
+          </h2>
+          <h2 className='mail-text' data-scroll data-scroll-speed='1'>
+            NAOHITO-T
+          </h2>
         </div>
       </div>
       <Copyright className='footer-copyright' size='1rem' />

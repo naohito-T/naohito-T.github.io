@@ -45,7 +45,9 @@ export const Header: NextComponentType<NextPageContext, null, Props> = ({ classN
       <div className='timeline-wrapper'>
         <CircleBounce id='circle-bounce' />
       </div>
-      <h1 className='title'>{AppMetaConfig.PAGE_TITLE}</h1>
+      <a href='https://github.com/naohito-T' target='_blank' rel='noreferrer'>
+        <h1 className='title'>{AppMetaConfig.PAGE_TITLE}</h1>
+      </a>
     </Wrapper>
   );
 };

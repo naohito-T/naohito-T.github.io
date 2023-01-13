@@ -24,12 +24,12 @@ export class AppMetaConfig extends BaseConfig {
    * @desc Page default url
    */
   public static readonly PAGE_URL =
-    this.RUN_ENV === 'development' ? 'http://localhost:3000/' : 'https://moderato.vercel.app/';
+    this.RUN_ENV === 'development' ? 'http://localhost:3000/' : 'https://naohito-t.github.io/';
 
   /**
    * @desc Page default og image
    */
-  public static readonly PAGE_OG_IMAGE = '/images/about_me.jpg';
+  public static readonly PAGE_OG_IMAGE = '/about_me.jpg';
 
   /**
    * @desc copyright

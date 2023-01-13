@@ -35,6 +35,8 @@ export const Cube: NextComponentType<NextPageContext, null, CubeProps> = ({ clas
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     if (typeof window !== 'undefined') {
+      console.log(`p5.windowWidth${p5.windowWidth}`);
+      console.log(`p5.windowHeight${p5.windowHeight}`);
       p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(canvasParentRef);
     }
   };
@@ -48,7 +50,7 @@ export const Cube: NextComponentType<NextPageContext, null, CubeProps> = ({ clas
           p5.stroke(255, 147, 206);
           p5.rotateX(p5.frameCount * 0.01);
           p5.rotateY(p5.frameCount * 0.01);
-          p5.box(200, 200, 200);
+          p5.box(150, 150, 150);
         }
       }
     }
