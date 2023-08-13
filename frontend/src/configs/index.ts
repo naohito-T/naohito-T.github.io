@@ -1,3 +1,3 @@
-export * from './app.config';
+export * from './constraint.config';
 export * from './env.config';
-export * from './cms.endpoint';
+export * from './router.config';

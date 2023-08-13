@@ -1,0 +1,39 @@
+name: Frontend check eslint
+
+on:
+  pull_request:
+    paths:
+      - "frontend/**"
+      - '!**.md'
+
+defaults:
+  run:
+    working-directory: frontend
+
+jobs:
+  check-eslint:
+    timeout-minutes: 5
+
+    strategy:
+      matrix:
+        node-version: [16.17.0]
+        os: [ubuntu-22.04]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Composite Setup node
+        uses: ./.github/actions/setup/node
+        with:
+          node-version: ${{ matrix.node-version }}
+          work-directory: frontend
+
+      - name: eslint check
+        run: yarn lint

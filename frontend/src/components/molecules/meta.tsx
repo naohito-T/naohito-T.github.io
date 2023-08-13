@@ -55,6 +55,7 @@ export const Meta: NextComponentType<NextPageContext, null, Props> = ({
       {/* faviconの設定 */}
       <link rel='shortcut icon' type='image/svg+xml' href='/favicon.svg' />
       <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
       {/* @see https://www.symmetric.co.jp/blog/archives/93 */}
       <meta name='apple-mobile-web-app-capable' content='yes' />
       <meta name='apple-mobile-web-app-status-bar-style' content='black'></meta>
