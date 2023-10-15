@@ -76,25 +76,25 @@ time,
 mark,
 audio,
 video {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  // line-height: 0; 謎のheaderがくいこむ
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-size: inherit;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  vertical-align: middle;
   // -webkit-backface-visibility: hidden;
   // backface-visibility: hidden;
   background: transparent;
   border: 0;
-  box-sizing: border-box;
-  font-size: inherit;
-  -webkit-font-smoothing: antialiased;
-  // line-height: 0; 謎のheaderがくいこむ
-  margin: 0;
-  margin-block-end: 0;
-  margin-block-start: 0;
-  margin-inline-end: 0;
-  margin-inline-start: 0;
   outline: 0;
-  overflow-wrap: break-word;
-  padding: 0;
-  position: relative;
-  vertical-align: middle;
-  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -129,29 +129,29 @@ q::after {
 }
 
 a {
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  font-size: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  font-size: 100%;
+  color: inherit;
   text-decoration: none;
   vertical-align: baseline;
+  cursor: pointer;
+  background: transparent;
 }
 
 /* change colours to suit your needs */
 ins {
-  background-color: #ff9;
   color: #000;
   text-decoration: none;
+  background-color: #ff9;
 }
 
 /* change colours to suit your needs */
 mark {
-  background-color: #ff9;
-  color: #000;
   font-style: italic;
   font-weight: bold;
+  color: #000;
+  background-color: #ff9;
 }
 
 del {
@@ -160,50 +160,50 @@ del {
 
 abbr[title],
 dfn[title] {
-  border-bottom: 1px dotted;
   cursor: help;
+  border-bottom: 1px dotted;
 }
 
 table {
-  border-collapse: collapse;
   border-spacing: 0;
+  border-collapse: collapse;
 }
 
 /* change border colour to suit your needs */
 hr {
-  border: 0;
-  border-top: 1px solid #ccc;
   display: block;
   height: 1px;
-  margin: 0;
-  margin-block-end: 0;
-  margin-block-start: 0;
-  margin-inline-end: 0;
-  margin-inline-start: 0;
   padding: 0;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
 input,
 select,
 textarea {
+  vertical-align: middle;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  vertical-align: middle;
 }
 
 select {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  color: inherit;
+  vertical-align: middle;
+  cursor: pointer;
   background: none transparent;
   border: 0;
   border-radius: 0;
-  box-sizing: border-box;
-  color: inherit;
-  cursor: pointer;
-  font-size: inherit;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  vertical-align: middle;
 }
 
 select:focus,

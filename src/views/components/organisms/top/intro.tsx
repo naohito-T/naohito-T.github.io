@@ -10,8 +10,8 @@ type Props = {
 export const Intro: NextComponentType<NextPageContext, null, Props> = ({ className }) => {
   return (
     <section className={classNames(className, s.intro)} data-testid='Intro'>
-      <div className={s.contents}>
-        <div className={s.wrap} data-scroll-section>
+      <div className={s.contents} data-scroll-section>
+        <div>
           <h2 className={s.title} data-scroll data-scroll-speed='2'>
             naohito-T.github.io
           </h2>

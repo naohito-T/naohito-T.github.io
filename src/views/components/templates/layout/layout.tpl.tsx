@@ -1,7 +1,7 @@
 import type { NextComponentType, NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
+import s from '@/styles/scss/modules/layouts/layout.module.scss';
 import { Meta, Header, Footer } from '@/views/components/molecules';
 import type { CubeProps } from '@/views/components/organisms';
 
@@ -16,26 +16,6 @@ const Cube = dynamic<CubeProps>(
   { ssr: false },
 );
 
-const Wrapper = styled.div`
-  width: 100%;
-
-  .header {
-    position: fixed;
-    width: 100%;
-    height: 80px;
-  }
-
-  .cube {
-    position: absolute;
-    z-index: -10;
-  }
-
-  .main {
-    padding-top: 80px;
-    width: 100%;
-  }
-`;
-
 export const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({
   disableRightClick = false,
   children,
@@ -45,16 +25,16 @@ export const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({
   return (
     <>
       <Meta pageFullPath={pathname} pageAsPath={asPath} />
-      <Wrapper
-        className='layout'
+      <div
+        className={s.layout}
         onContextMenu={(e) => disableRightClick && e.preventDefault()}
-        data-testid='layout'
+        data-testid='Layout'
       >
-        <Header className='header' />
-        <Cube className='cube' />
+        <Header className={s.header} />
+        <Cube className={s.cube} />
         {children}
         <Footer />
-      </Wrapper>
+      </div>
     </>
   );
 };

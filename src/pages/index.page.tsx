@@ -13,11 +13,9 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const TopPage: NextPage<Props> = ({}) => {
   return (
     <Layout disableRightClick={true}>
-      <RLSProvider>
-        <div data-scroll-container>
-          <TopTpl />
-        </div>
-      </RLSProvider>
+      {/* <RLSProvider> */}
+      <TopTpl data-scroll-container />
+      {/* </RLSProvider> */}
     </Layout>
   );
 };

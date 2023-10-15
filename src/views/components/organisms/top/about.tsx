@@ -1,54 +1,16 @@
 import type { NextComponentType, NextPageContext } from 'next';
-import styled from 'styled-components';
+import classNames from 'classnames';
+import s from '@/styles/scss/modules/organisms/about.module.scss';
 
 type Props = {
   className?: string;
 };
 
-const Wrapper = styled.section`
-  width: 100%;
-  height: 100svh;
-  position: relative;
-
-  .direction-block {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: 1;
-
-    .direction-item {
-      .text {
-        color: #fff;
-        font-size: 6rem;
-        background-color: rgba(32, 32, 32, 0.75);
-        display: block;
-        padding: 0 20px;
-        white-space: nowrap;
-      }
-
-      &.one {
-        transform: translateX(-50vw) rotate(26deg);
-      }
-
-      &.three {
-        transform: rotate(9deg);
-      }
-
-      &.four {
-        transform: translateX(-60vw) rotate(-19deg);
-      }
-
-      &.five {
-        transform: translateX(-20vw) rotate(3deg);
-      }
-    }
-  }
-`;
-
+/** @description 中段のセクション */
 export const About: NextComponentType<NextPageContext, null, Props> = ({ className }) => {
   return (
-    <Wrapper className={className} data-testid='center-section' data-scroll-section>
-      <div className='direction-block' id='direction'>
+    <section className={classNames(className, s.about)} data-testid='About' data-scroll-section>
+      {/* <div className='direction-block' id='direction'>
         <div className='direction-item one'>
           <span
             className='text'
@@ -100,7 +62,7 @@ export const About: NextComponentType<NextPageContext, null, Props> = ({ classNa
             Ok, enough!!!!
           </span>
         </div>
-      </div>
-    </Wrapper>
+      </div> */}
+    </section>
   );
 };

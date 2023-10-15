@@ -3,16 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "description": "Resume portfolio site.",
-  "license": "MIT",
   "keywords": [
     "Resume",
     "TypeScript",
     "Next.js"
   ],
-  "engines": {
-    "node": "^18.17.1",
-    "npm": "^9.6.7"
-  },
+  "license": "MIT",
   "scripts": {
     "dev": "run-p dev:next dev:scss",
     "dev:next": "next dev -p 2000",
@@ -22,10 +18,12 @@
     "c:type": "tsc --noEmit",
     "c:eslint": "next lint --max-warnings 0 .",
     "c:format": "prettier --check .",
+    "c:style": "stylelint --max-warnings=0 '**/*.scss'",
     "w:eslint": "next lint --fix .",
     "w:format": "prettier --write .",
-    "lint": "run-p c:type c:eslint c:format",
-    "lint:fix": "run-p w:eslint w:format",
+    "w:style": "stylelint --max-warnings=0 --fix '**/*.scss'",
+    "lint": "run-p c:type c:eslint c:format c:style",
+    "lint:fix": "run-p w:eslint w:format w:style",
     "jest:c": "jest --coverage --silent --testLocationInResults --ci --json --outputFile=\"report.json\"",
     "test": "jest -c ./tests/jest.config.js",
     "deploy": "gh-pages -d out"
@@ -36,15 +34,9 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.0",
     "@react-p5/core": "^1.1.0",
-    "@types/node": "18.11.13",
-    "@types/react": "18.0.26",
-    "@types/react-dom": "18.0.9",
     "classnames": "^2.3.2",
-    "eslint": "8.29.0",
-    "eslint-config-next": "13.0.6",
     "gsap": "^3.11.3",
     "locomotive-scroll": "^4.1.4",
-    "microcms-js-sdk": "^2.3.2",
     "next": "13.0.6",
     "p5": "^1.5.0",
     "react": "18.2.0",
@@ -60,10 +52,15 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^13.0.6",
     "@testing-library/jest-dom": "^5.16.5",
+    "@types/node": "18.11.13",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
     "@types/styled-components": "^5.1.26",
     "@types/three": "^0.146.0",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "eslint": "8.29.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-next": "13.0.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.28.1",
     "gh-pages": "^4.0.0",
@@ -73,7 +70,17 @@
     "prettier": "^2.8.1",
     "sass": "^1.56.2",
     "serve": "^14.1.2",
+    "stylelint": "^15.10.3",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-scss": "^5.2.1",
     "typed-scss-modules": "^7.1.4"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@3.6.4",
+  "engines": {
+    "node": "^18.17.1",
+    "npm": "^9.6.7"
+  }
 }
