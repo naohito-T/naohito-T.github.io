@@ -2,10 +2,5 @@
   "typescript.format.enable": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.workingDirectories": [{ "mode": "auto" }],
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "editor.formatOnSave": false,
-  "editor.formatOnType": true,
-  "editor.formatOnPaste": true
+  "editor.formatOnSave": true
 }
