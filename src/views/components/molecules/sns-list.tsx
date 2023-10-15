@@ -11,7 +11,6 @@ const SnsWrapper = styled.div`
   position: relative;
   width: 100%;
   padding: 1.5rem 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
