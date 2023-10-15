@@ -14,7 +14,9 @@
     "npm": "^9.6.7"
   },
   "scripts": {
-    "dev": "next dev -p 2000",
+    "dev": "run-p dev:next dev:scss",
+    "dev:next": "next dev -p 2000",
+    "dev:scss": "typed-scss-modules src --watch",
     "build": "next build && next export",
     "start": "serve out",
     "c:type": "tsc --noEmit",
@@ -37,6 +39,7 @@
     "@types/node": "18.11.13",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",
+    "classnames": "^2.3.2",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
     "gsap": "^3.11.3",
@@ -69,7 +72,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.1",
     "sass": "^1.56.2",
-    "serve": "^14.1.2"
+    "serve": "^14.1.2",
+    "typed-scss-modules": "^7.1.4"
   },
   "packageManager": "yarn@3.6.4"
 }

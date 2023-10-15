@@ -1,24 +1,18 @@
 import type { NextComponentType, NextPageContext } from 'next';
-import styled from 'styled-components';
+import classNames from 'classnames';
 import { Constructor as C } from '@/configs';
+import s from '@/styles/scss/modules/atoms/copyright.module.scss';
 
 type Props = {
   className?: string;
   size: string;
 };
 
-const Wrapper = styled.p<Omit<Props, 'className'>>`
-  font-size: ${(props) => props.size};
-  letter-spacing: 0.05rem;
-`;
-
-export const Copyright: NextComponentType<NextPageContext, null, Props> = ({
-  className = '',
-  size,
-}) => {
+//  1rem
+export const Copyright: NextComponentType<NextPageContext, null, Props> = ({ className = '' }) => {
   return (
-    <Wrapper className={className} size={size}>
+    <p className={classNames(className, s.copyright)}>
       <small>{C.COPYRIGHT}</small>
-    </Wrapper>
+    </p>
   );
 };

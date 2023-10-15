@@ -1,6 +1,6 @@
 import type { NextComponentType, NextPageContext } from 'next';
 import styled from 'styled-components';
-import { displayFlex, MediaSP } from '@/styles/modules';
+import { displayFlex, MediaSP } from '@/styles/scss/modules';
 
 type Props = {
   className?: string;

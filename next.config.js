@@ -12,6 +12,7 @@ const nextConfig = {
   eslint: {
     dirs: ['src', 'tests'],
   },
+  // sassOptionsはNext.jsでSassを使用する際にSassコンパイラへpathを伝える。includePathsは、Sassファイルの@useや@import時のファイルの探索パスを追加するためのオプション。
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
   },

@@ -2,7 +2,7 @@ import type { NextComponentType, NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import styled from 'styled-components';
 import { Constructor as C } from '@/configs';
-import { displayFlex } from '@/styles/modules';
+import { displayFlex } from '@/styles/scss/modules';
 import type { CircleBounceType } from './circle-bounce';
 
 const CircleBounce = dynamic<CircleBounceType>(
