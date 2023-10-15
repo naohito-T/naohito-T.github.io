@@ -1,6 +1,6 @@
-# naohito-T.github.io PULL REQUEST
+# PULL REQUEST
 
-<!-- プルリクに関する対応内容を記載する -->
+作成したissueを紐付けてください。
 closes #xxx
 
 ## 対応内容

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "strict": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/dist",
+    "**/.esbuild",
+    "**/.serverless",
+    "**/.next",
+    "**/storybook-static",
+    "**/tools",
+    "cdk.out"
+  ],
+}

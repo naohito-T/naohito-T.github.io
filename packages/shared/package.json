@@ -1,0 +1,26 @@
+{
+    "name": "shared",
+    "description": "Package shared logic",
+    "version": "1.0.0",
+    "private": true,
+    "engines": {
+        "node": "^16.17.0",
+        "npm": "^8.15.0"
+    },
+    "scripts": {
+        "t:check": "tsc --noEmit",
+        "l:check": "next lint",
+        "l:write": "next lint --fix",
+        "p:check": "prettier -c './**/*.{js,jsx,ts,tsx,json}'",
+        "p:write": "prettier -w './**/*.{js,jsx,ts,tsx,json}'",
+        "s:check": "stylelint '**/*.scss'",
+        "s:write": "stylelint --fix '**/*.scss'",
+        "jest": "jest -c ./tests/jest.config.ts",
+        "jest:u": "jest -u -c ./tests/jest.config.ts",
+        "jest:w": "jest --watch -c ./tests/jest.config.ts",
+        "jest:c": "jest -c ./tests/jest.config.ts --coverage --silent"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {}
+}

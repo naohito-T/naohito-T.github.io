@@ -1,0 +1,37 @@
+{
+  "name": "naohito-t.github.io",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Resume portfolio site.",
+  "license": "MIT",
+  "engines": {
+    "node": "^18.17.1",
+    "npm": "^8.15.0"
+  },
+  "keywords": [
+    "Resume",
+    "TypeScript",
+    "Next.js"
+  ],
+  "workspaces": [
+    "packages/frontend",
+    "packages/shared"
+  ],
+  "scripts": {
+    "all:t:check": "yarn workspaces run t:check",
+    "all:l:check": "yarn workspaces run l:check",
+    "all:p:check": "yarn workspaces run p:check",
+    "all:p:write": "yarn workspaces run p:write"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@types/three": "^0.146.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "gh-pages": "^4.0.0",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.1"
+  }
+}
