@@ -10,11 +10,16 @@ inputs:
   node-version:
     description: 'Specified node version'
     required: true
-    default: '18.14.2'
+    default: '18.17.1'
   work-directory:
     description: 'Destination working Directory'
     required: false
-    default: ./
+    default: '.'
+
+outputs:
+  node_modules_cache_id:
+    description: "cache-node.outputs.cache-hit"
+    value: ${{ steps.cache-node.outputs.cache-hit }}
 
 runs:
   using: 'composite'
