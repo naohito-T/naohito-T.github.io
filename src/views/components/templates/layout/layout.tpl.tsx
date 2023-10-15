@@ -2,7 +2,7 @@ import type { NextComponentType, NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { Header, Meta } from '@/views/components/molecules';
+import { Meta, Header, Footer } from '@/views/components/molecules';
 import type { CubeProps } from '@/views/components/organisms';
 
 type LayoutProps = {
@@ -53,6 +53,7 @@ export const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({
         <Header className='header' />
         <Cube className='cube' />
         {children}
+        <Footer />
       </Wrapper>
     </>
   );

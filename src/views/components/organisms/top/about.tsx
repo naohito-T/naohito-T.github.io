@@ -45,7 +45,7 @@ const Wrapper = styled.section`
   }
 `;
 
-export const CenterSection: NextComponentType<NextPageContext, null, Props> = ({ className }) => {
+export const About: NextComponentType<NextPageContext, null, Props> = ({ className }) => {
   return (
     <Wrapper className={className} data-testid='center-section' data-scroll-section>
       <div className='direction-block' id='direction'>
