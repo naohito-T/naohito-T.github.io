@@ -1,4 +1,4 @@
-import { NextComponentType, NextPageContext } from 'next';
+import type { NextComponentType, NextPageContext } from 'next';
 import Head from 'next/head';
 import { Constructor as C } from '@/configs';
 

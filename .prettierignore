@@ -1,4 +1,10 @@
-**/.next/**
-**/_next/**
-**/dist/**
+.next/
+_next/
+dist/
+node_modules/
+.yarn/
+.vscode/
+.github/
 *.md
+.prettierrc
+.yarnrc.yml

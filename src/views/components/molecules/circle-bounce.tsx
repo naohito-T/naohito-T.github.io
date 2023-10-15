@@ -1,9 +1,9 @@
+import type { NextComponentType, NextPageContext } from 'next';
 import { useEffect } from 'react';
+import styled from 'styled-components';
 import { AppGSAP } from '@/libs/animation/base';
 import { bounceRepeat } from '@/libs/animation/tween';
 import { setAlpha } from '@/libs/animation/util';
-import { NextComponentType, NextPageContext } from 'next';
-import styled from 'styled-components';
 
 export type CircleBounceType = {
   id: string;
@@ -17,9 +17,7 @@ const Wrapper = styled.div`
   background-color: red;
 `;
 
-/**
- * @desc y: -200 から y: 0で落ちてくる 丸の無限アニメーション
- */
+/** @description y: -200 から y: 0で落ちてくる 丸の無限アニメーション */
 export const CircleBounce: NextComponentType<NextPageContext, null, CircleBounceType> = ({
   id,
   className = '',
@@ -27,7 +25,7 @@ export const CircleBounce: NextComponentType<NextPageContext, null, CircleBounce
   useEffect(() => {
     setAlpha(AppGSAP.appGsap, `#${id}`, { y: -200 });
     bounceRepeat(AppGSAP.appGsap, id).play();
-  }, []);
+  }, [id]);
 
   return <Wrapper id={id} className={className} />;
 };

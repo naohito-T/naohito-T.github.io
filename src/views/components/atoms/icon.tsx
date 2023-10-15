@@ -1,11 +1,11 @@
 import type { NextComponentType, NextPageContext } from 'next';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
 type Props = {
-  typeIcon: 'lens' | 'portfolio' | 'blog' | 'twitter' | 'github';
-  fontSize?: 'small' | 'inherit' | 'large' | 'medium' | undefined;
+  typeIcon: 'blog' | 'github' | 'lens' | 'portfolio' | 'twitter';
+  fontSize?: 'inherit' | 'large' | 'medium' | 'small' | undefined;
 };
 
 export const Icon: NextComponentType<NextPageContext, null, Props> = ({

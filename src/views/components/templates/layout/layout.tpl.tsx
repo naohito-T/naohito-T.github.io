@@ -1,9 +1,9 @@
-import { NextComponentType, NextPageContext } from 'next';
-import { useRouter } from 'next/router';
+import type { NextComponentType, NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
-import { Header, Meta } from '@/views/components/molecules';
-import { CubeProps } from '@/views/components/organisms';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import { Header, Meta } from '@/views/components/molecules';
+import type { CubeProps } from '@/views/components/organisms';
 
 type LayoutProps = {
   // 右クリックを禁止するか default false
@@ -12,7 +12,7 @@ type LayoutProps = {
 };
 
 const Cube = dynamic<CubeProps>(
-  () => import('~/views/components/organisms').then((module) => module.Cube),
+  () => import('@/views/components/organisms').then((module) => module.Cube),
   { ssr: false },
 );
 

@@ -1,6 +1,6 @@
+import nextJest from 'next/jest';
 import type { Config } from '@jest/types';
 // next12からNext.jsにはJestの構成が組み込まれている
-import nextJest from 'next/jest';
 
 const createJestConfig = nextJest({
   dir: './',

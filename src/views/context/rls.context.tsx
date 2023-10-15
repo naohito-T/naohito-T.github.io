@@ -1,5 +1,5 @@
-import { useRef } from 'react';
 import type { NextComponentType, NextPageContext } from 'next';
+import { useRef } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 
 type Props = {

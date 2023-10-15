@@ -1,7 +1,7 @@
-import { NextComponentType, NextPageContext } from 'next';
+import type { NextComponentType, NextPageContext } from 'next';
 import styled from 'styled-components';
-import { displayFlex, MediaSP } from '~/styles/modules';
-import { Copyright } from '~/views/components/atoms';
+import { displayFlex, MediaSP } from '@/styles/modules';
+import { Copyright } from '@/views/components/atoms';
 
 type Props = {
   className?: string;

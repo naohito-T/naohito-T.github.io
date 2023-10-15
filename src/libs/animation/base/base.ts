@@ -1,13 +1,13 @@
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { TextPlugin } from 'gsap/dist/TextPlugin';
 
 /**
  * @NOTE distからimportしないとerrorになる。
  * @TODO これやる
  * https://devsakaso.com/gsap-non-loop-slider/
  */
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { TextPlugin } from 'gsap/dist/TextPlugin';
-import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 
 export abstract class AppGSAP {
   public static appGsap: typeof gsap;

@@ -1,8 +1,8 @@
-import { NextComponentType, NextPageContext } from 'next';
+import type { NextComponentType, NextPageContext } from 'next';
 import styled from 'styled-components';
-import { Sns } from '@/schemas';
-import { TopSection, CenterSection } from '~/views/components/organisms';
-import { Footer } from '~/views/components/molecules';
+import type { Sns } from '@/schemas';
+import { Footer } from '@/views/components/molecules';
+import { TopSection, CenterSection } from '@/views/components/organisms';
 
 type Props = {
   snsList?: Sns[];

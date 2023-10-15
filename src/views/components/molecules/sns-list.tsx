@@ -1,6 +1,6 @@
 import type { NextComponentType, NextPageContext } from 'next';
 import styled from 'styled-components';
-import { Icon } from '~/views/components/atoms';
+import { Icon } from '@/views/components/atoms';
 
 type Props = {
   className?: string;

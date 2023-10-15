@@ -1,6 +1,6 @@
-import { NextComponentType, NextPageContext } from 'next';
+import type { NextComponentType, NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
-import p5Types from 'p5';
+import type p5Types from 'p5';
 
 // const Sketch = dynamic(
 //   import('react-p5').then((mod) => mod.default),
