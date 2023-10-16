@@ -2,8 +2,9 @@ import type { NextComponentType, NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import s from '@/styles/scss/modules/layouts/layout.module.scss';
-import { Meta, Header, Footer } from '@/views/components/molecules';
+import { Meta, Header } from '@/views/components/molecules';
 import type { CubeProps } from '@/views/components/organisms';
+import { RLSProvider } from '@/views/context';
 
 type LayoutProps = {
   // 右クリックを禁止するか default false
@@ -32,8 +33,7 @@ export const Layout: NextComponentType<NextPageContext, null, LayoutProps> = ({
       >
         <Header className={s.header} />
         <Cube className={s.cube} />
-        {children}
-        <Footer />
+        <RLSProvider>{children}</RLSProvider>
       </div>
     </>
   );

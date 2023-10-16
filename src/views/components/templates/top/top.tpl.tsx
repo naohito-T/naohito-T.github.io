@@ -9,7 +9,7 @@ type Props = {
 
 export const TopTpl: NextComponentType<NextPageContext, null, Props> = ({ className }) => {
   return (
-    <div className={classNames(className, s.topTpl)} data-testid='TopTpl' data-scroll-section>
+    <div className={classNames(className, s.topTpl)} data-testid='TopTpl'>
       <Intro />
       <About />
     </div>
