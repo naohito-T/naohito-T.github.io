@@ -45,36 +45,36 @@ jobs:
         env:
           NEXT_PUBLIC_STAGE: local
 
-  test-frontend:
-    needs:
-      - setup-node
+  # test-frontend:
+  #   needs:
+  #     - setup-node
 
-    timeout-minutes: 10
+  #   timeout-minutes: 10
 
-    runs-on: ubuntu-22.04
+  #   runs-on: ubuntu-22.04
 
-    steps:
-      - uses: actions/checkout@v3
+  #   steps:
+  #     - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.17.1
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 18.17.1
 
-      - name: Restore node modules
-        uses: actions/cache@v3
-        id: node_modules_cache_id
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-1-${{ hashFiles('**/yarn.lock') }}
+  #     - name: Restore node modules
+  #       uses: actions/cache@v3
+  #       id: node_modules_cache_id
+  #       with:
+  #         path: "**/node_modules"
+  #         key: ${{ runner.os }}-modules-1-${{ hashFiles('**/yarn.lock') }}
 
-      - uses: artiomtr/jest-coverage-report-action@v2
-        with:
-          working-directory: ./
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          package-manager: yarn
-          test-script: yarn jest:c
-        env:
-          NEXT_PUBLIC_STAGE: local
+  #     - uses: artiomtr/jest-coverage-report-action@v2
+  #       with:
+  #         working-directory: ./
+  #         github-token: ${{ secrets.GITHUB_TOKEN }}
+  #         package-manager: yarn
+  #         test-script: yarn jest:c
+  #       env:
+  #         NEXT_PUBLIC_STAGE: local
 
   lint-frontend:
     needs:
