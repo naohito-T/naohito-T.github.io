@@ -78,7 +78,7 @@ export const About: NextComponentType<NextPageContext, null, Props> = ({ classNa
             <p>category</p>
             <div className={s.text}>
               <h2>GitHub</h2>
-              <p>2016.08.10</p>
+              <p>2016: launch</p>
             </div>
           </a>
         </li>

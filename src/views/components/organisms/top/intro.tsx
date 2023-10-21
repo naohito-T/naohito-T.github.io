@@ -23,9 +23,9 @@ export const Intro: NextComponentType<NextPageContext, null, Props> = ({ classNa
           </p>
           <span className={s.border}></span>
         </div>
-      </div>
-      <div className={s.scrollDown}>
-        <span>Scroll</span>
+        <div className={s.scrollDown}>
+          <span>Scroll</span>
+        </div>
       </div>
     </section>
   );
