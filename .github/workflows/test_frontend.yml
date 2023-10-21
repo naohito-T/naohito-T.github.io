@@ -40,12 +40,10 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-1-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Use .env
-        run: |
-          echo NEXT_PUBLIC_STAGE=local > .env
-
       - name: Build check
         run: yarn build
+        env:
+          NEXT_PUBLIC_STAGE: local
 
   test-frontend:
     needs:
@@ -69,17 +67,14 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-1-${{ hashFiles('**/yarn.lock') }}
 
-      
-      - name: Use .env
-        run: |
-          echo NEXT_PUBLIC_STAGE=local > .env
-
       - uses: artiomtr/jest-coverage-report-action@v2
         with:
           working-directory: ./
           github-token: ${{ secrets.GITHUB_TOKEN }}
           package-manager: yarn
           test-script: yarn jest:c
+        env:
+          NEXT_PUBLIC_STAGE: local
 
   lint-frontend:
     needs:
@@ -102,19 +97,8 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-1-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Use .env
-        run: |
-          echo NEXT_PUBLIC_STAGE=local > .env
-
-      - name: Type check
-        working-directory: packages/frontend
-        run: yarn c:type
-
-      - name: Eslint check
-        working-directory: packages/frontend
-        run: yarn c:eslint
-
-      - name: Stylelint check
-        working-directory: packages/frontend
-        run: yarn s:check
+      - name: Check format
+        run: yarn lint
+        env:
+          NEXT_PUBLIC_STAGE: local
 
