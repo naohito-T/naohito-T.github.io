@@ -1,4 +1,4 @@
-name: Git deploy CI
+name: Deploy CI
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.17.0]
+        node-version: [18.17.1]
         os: [ubuntu-22.04]
 
     runs-on: ${{ matrix.os }}
@@ -24,32 +24,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - name: Composite Setup node
+        uses: ./.github/actions/setup/node
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        id: node_modules_cache_id
-        with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-            ${{ runner.os }}-
-
-      - name: Echo isCache
-        run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
-
-      - name: Node_modules install
-        run: yarn
 
       - name: Build
         run: yarn build
         env:
-          MICRO_CMS_DOMAIN: ${{ secrets.MICRO_CMS_DOMAIN }}
-          MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
+          NEXT_PUBLIC_STAGE: prod
 
       # しかしGitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
       # つまりHTMLからJSを読み込めない
@@ -61,4 +44,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend/out
+          publish_dir: ./out
