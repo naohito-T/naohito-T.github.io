@@ -9,8 +9,8 @@ type Props = {
 
 export const Footer: NextComponentType<NextPageContext, null, Props> = ({ className = '' }) => {
   return (
-    <footer className={classNames(className, s.footer)} data-testid='Footer' data-scroll-section>
-      <div className={s.inner}>
+    <footer className={classNames(className, s.footer)} data-testid='Footer'>
+      <div className={s.inner} data-scroll-section>
         <div className={s.email}>
           <h2 className={s.text} data-scroll data-scroll-speed='2'>
             WORK CONTACT

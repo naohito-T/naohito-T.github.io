@@ -2,12 +2,6 @@ import type { NextComponentType, NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import type p5Types from 'p5';
 
-// const Sketch = dynamic(
-//   import('react-p5').then((mod) => mod.default),
-//   {
-//     ssr: false,
-//   },
-// );
 const Sketch = dynamic(
   () =>
     import('react-p5').then((mod) => {
@@ -50,7 +44,12 @@ export const Cube: NextComponentType<NextPageContext, null, CubeProps> = ({ clas
           p5.stroke(255, 147, 206);
           p5.rotateX(p5.frameCount * 0.01);
           p5.rotateY(p5.frameCount * 0.01);
-          p5.box(150, 150, 150);
+          // spサイズでは小さくする
+          if (p5.windowWidth < 600) {
+            p5.box(80, 80, 80);
+          } else {
+            p5.box(150, 150, 150);
+          }
         }
       }
     }

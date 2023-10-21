@@ -7,6 +7,14 @@
   box-sizing: border-box;
 }
 
+[data-scroll-container] {
+  will-change: transform;
+}
+
+[data-scroll-section] {
+  will-change: transform;
+}
+
 html {
   overflow-y: scroll;
   overscroll-behavior-y: none;

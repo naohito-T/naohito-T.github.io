@@ -74,38 +74,38 @@ export const About: NextComponentType<NextPageContext, null, Props> = ({ classNa
     <section className={classNames(className, s.about)} data-testid='About' data-scroll-section>
       <ul className={s.categoryList} id='section' ref={wrapperRef}>
         <li className={s.item}>
-          <a href=''>
+          <a href='https://github.com/naohito-T' target='_blank' rel='noreferrer'>
             <p>category</p>
             <div className={s.text}>
               <h2>GitHub</h2>
-              <p>2022.04.18</p>
+              <p>2016.08.10</p>
             </div>
           </a>
         </li>
         <li className={s.item}>
-          <a href=''>
+          <a href='https://naopedia.netlify.app/' target='_blank' rel='noreferrer'>
+            <p>category</p>
+            <div className={s.text}>
+              <h2>Knowledge book</h2>
+              <p>2017: launch</p>
+            </div>
+          </a>
+        </li>
+        <li className={s.item}>
+          <a href='https://moderato.vercel.app/' target='_blank' rel='noreferrer'>
             <p>category</p>
             <div className={s.text}>
               <h2>Blog</h2>
-              <p>2022.04.18</p>
+              <p>2021: launch</p>
             </div>
           </a>
         </li>
         <li className={s.item}>
-          <a href=''>
+          <a href='#'>
             <p>category</p>
             <div className={s.text}>
-              <h2>Portfolio</h2>
-              <p>2022.04.18</p>
-            </div>
-          </a>
-        </li>
-        <li className={s.item}>
-          <a href=''>
-            <p>category</p>
-            <div className={s.text}>
-              <h2>SNS</h2>
-              <p>2022.04.18</p>
+              <h2>（WIP）Portfolio</h2>
+              <p>2024: Coming Soon</p>
             </div>
           </a>
         </li>

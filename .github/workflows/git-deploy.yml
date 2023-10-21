@@ -33,8 +33,7 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          MICRO_CMS_DOMAIN: ${{ secrets.MICRO_CMS_DOMAIN }}
-          MICRO_CMS_API_KEY: ${{ secrets.MICRO_CMS_API_KEY }}
+          NEXT_PUBLIC_STAGE: prod
 
       # しかしGitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
       # つまりHTMLからJSを読み込めない
