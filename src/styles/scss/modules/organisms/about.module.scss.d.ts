@@ -1,8 +1,7 @@
 export declare const about: string;
-export declare const directionBlock: string;
-export declare const directionItem: string;
-export declare const five: string;
-export declare const four: string;
-export declare const one: string;
+export declare const categoryList: string;
+export declare const hoverImg: string;
+export declare const hoverStalkerImg: string;
+export declare const item: string;
+export declare const jsActive: string;
 export declare const text: string;
-export declare const three: string;

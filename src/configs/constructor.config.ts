@@ -12,7 +12,7 @@ export class Constructor {
 
   /** @description Page default url */
   @EnvVar({
-    local: 'http://localhost:3000/',
+    local: 'http://localhost:2000/',
     prod: 'https://naohito-t.github.io/',
   })
   public static readonly PAGE_URL: string;
@@ -23,18 +23,10 @@ export class Constructor {
   /** @description copyright */
   public static readonly COPYRIGHT = '©NAOHITO-T.GITHUB.IO';
 
-  /**
-   * @desc 769px以上
-   */
-  public static readonly MEDIA_PC = '(min-width: 769px)';
-
-  /**
-   * @desc 768px以下
-   */
-  public static readonly MEDIA_SP = '(max-width: 768px)';
-
-  /**
-   * @desc 768px以下
-   */
-  public static readonly MEDIA_SMALL_SP = '(max-width: 375px)';
+  public static readonly ABOUT_HOVER_STALKER_IMAGES = [
+    './images/fashion-01.jpg',
+    './images/fashion-02.jpg',
+    './images/fashion-03.jpg',
+    './images/fashion-04.jpg',
+  ];
 }
