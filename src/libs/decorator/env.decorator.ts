@@ -1,4 +1,4 @@
-import type { ApplicationStageType} from '@/configs';
+import type { ApplicationStageType } from '@/configs';
 import { BaseEnv } from '@/configs';
 
 type EnvOptions<T> = {

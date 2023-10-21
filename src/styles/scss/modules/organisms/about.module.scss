@@ -1,4 +1,3 @@
-
 $gray: rgb(41 41 41);
 $white: #fff;
 $white02: rgb(255 255 255 / 22.8%);
@@ -33,7 +32,7 @@ $font-color-ctg: rgb(162 162 162);
           display: block;
           width: 100%;
           height: 1px;
-          content: "";
+          content: '';
           background-color: $white02;
         }
 
@@ -43,9 +42,9 @@ $font-color-ctg: rgb(162 162 162);
           display: block;
           width: 100%;
           height: 2px;
-          content: "";
+          content: '';
           background-color: $white;
-          transition: transform 1s cubic-bezier(.19,1,.22,1);
+          transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
           transform: scale(0);
           transform-origin: right center;
         }
@@ -99,7 +98,7 @@ $font-color-ctg: rgb(162 162 162);
             z-index: 2;
             h2 {
               opacity: 1;
-              transition: opacity 2s cubic-bezier(.19,1,.22,1);
+              transition: opacity 2s cubic-bezier(0.19, 1, 0.22, 1);
             }
           }
         }

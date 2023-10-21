@@ -13,24 +13,24 @@
     text-transform: uppercase;
 
     .title {
-        font-size: 3rem;
-        font-weight: bold;
+      font-size: 3rem;
+      font-weight: bold;
 
-        @include mq(sp) {
-          font-size: 1.8rem;
-        }
+      @include mq(sp) {
+        font-size: 1.8rem;
       }
+    }
 
-      .description {
-        display: block;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1;
+    .description {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: 1;
 
-        @include mq(sp) {
-          font-size: 1rem;
-        }
+      @include mq(sp) {
+        font-size: 1rem;
       }
+    }
 
     .border {
       display: block;
