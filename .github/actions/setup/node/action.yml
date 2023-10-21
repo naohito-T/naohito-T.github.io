@@ -14,7 +14,7 @@ inputs:
   work-directory:
     description: 'Destination working Directory'
     required: false
-    default: '.'
+    default: './'
 
 outputs:
   node_modules_cache_id:
@@ -29,13 +29,13 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
         cache: yarn
-        cache-dependency-path: ${{ inputs.work-directory }}/yarn.lock
+        cache-dependency-path: ${{ inputs.work-directory }}yarn.lock
 
     - name: Cache dependencies.
       id: cache-node
       uses: actions/cache@v3
       with:
-        path: '${{ inputs.work-directory }}/node_modules'
+        path: '${{ inputs.work-directory }}node_modules'
         key: ${{ runner.os }}-modules-${{ inputs.cache-version }}-${{ hashFiles('**/yarn.lock') }}
 
     - name: Cache hit check.
