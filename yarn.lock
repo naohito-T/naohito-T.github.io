@@ -4503,10 +4503,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gsap@npm:^3.11.3":
-  version: 3.11.3
-  resolution: "gsap@npm:3.11.3"
-  checksum: b97d33ca1fa28dc3b4ce957fa49226f6dcdea39eddd4ffaf4af2b9fe681ff974731bdb8717e50110842267187064659e2f7874c6d1936de4162f8c7721c09676
+"gsap@npm:^3.12.2":
+  version: 3.12.2
+  resolution: "gsap@npm:3.12.2"
+  checksum: e3e9709f9ca60cee0ef7fd91f45a232a48b550f95b6df090dfffe2511fccc651408476de575b69c1c2ce80b6089b6ad0d4854beb58ea427f14e51a30b0640a70
   languageName: node
   linkType: hard
 
@@ -6425,7 +6425,7 @@ __metadata:
     eslint-config-prettier: ^8.5.0
     eslint-plugin-import: ^2.28.1
     gh-pages: ^4.0.0
-    gsap: ^3.11.3
+    gsap: ^3.12.2
     jest: ^29.3.1
     jest-environment-jsdom: ^29.3.1
     locomotive-scroll: ^4.1.4
