@@ -2,7 +2,7 @@
 
 .footer {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
 
   .inner {
     display: flex;
@@ -18,7 +18,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    overflow: hidden;
 
     .text {
       overflow: hidden;
