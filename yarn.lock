@@ -859,12 +859,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/bundle-analyzer@npm:^13.0.6":
-  version: 13.0.6
-  resolution: "@next/bundle-analyzer@npm:13.0.6"
+"@next/bundle-analyzer@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "@next/bundle-analyzer@npm:14.0.1"
   dependencies:
     webpack-bundle-analyzer: 4.7.0
-  checksum: 3c0886277378ac1d342536171642a17b8c8e8c00e0e7aa0c0b9442b565f55b9432adce7ef1980260f8255db47b9840584a467f0bec0e8fc4b85bb4c64d259903
+  checksum: 4274b7999641d5f1886bd3583f0da22aee33c95497e41b55e980f37ca3b7325d602dd30a8dc63b88b8c4b58863eea90766f7216edb8d187f131e38ef32c716ee
   languageName: node
   linkType: hard
 
@@ -6410,7 +6410,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "naohito-t.github.io@workspace:."
   dependencies:
-    "@next/bundle-analyzer": ^13.0.6
+    "@next/bundle-analyzer": ^14.0.1
     "@react-p5/core": ^1.1.0
     "@testing-library/jest-dom": ^5.16.5
     "@types/node": 18.11.13
