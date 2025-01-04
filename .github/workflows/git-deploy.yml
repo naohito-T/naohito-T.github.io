@@ -30,8 +30,9 @@ jobs:
         env:
           NEXT_PUBLIC_STAGE: prod
 
-      # しかしGitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
-      # つまりHTMLからJSを読み込めない
+      # GitHub Pagesで.nojekyllファイルを追加する理由
+      # GitHub Pages では、デフォルトで Jekyll という静的サイトジェネレータが使用される。
+      # Jekyll は一部のファイルやディレクトリ（特に アンダースコア _ から始まるディレクトリ やファイル）を無視してしまう仕様がある
       # これを回避するために.nojekyllファイルをoutディレクトリに作る
       - name: add nojekyll
         run: touch ./out/.nojekyll

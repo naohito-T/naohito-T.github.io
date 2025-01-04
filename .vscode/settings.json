@@ -4,13 +4,13 @@
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "scss.validate": false,
   "[scss]": {
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true
+      "source.fixAll.stylelint": "explicit"
     }
   },
   "stylelint.stylelintPath": "./node_modules/stylelint",
