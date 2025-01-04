@@ -105,7 +105,7 @@ export const About: NextComponentType<NextPageContext, null, Props> = ({ classNa
             <p>category</p>
             <div className={s.text}>
               <h2>（WIP）Portfolio</h2>
-              <p>2024: Coming Soon</p>
+              <p>2025: Coming Soon</p>
             </div>
           </a>
         </li>

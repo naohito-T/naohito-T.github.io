@@ -1,6 +1,6 @@
 # naohito-T.github.io
 
-## description.
+## Overview
 
 Resume site.
 naohito-T.github.io lists my SNS accounts, blog, and note.
